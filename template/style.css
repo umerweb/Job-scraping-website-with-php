@@ -1,0 +1,591 @@
+*{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+.sec1{
+    display: flex;
+    flex-direction: row;
+    
+}
+#space{
+    width: 21vw;
+    height: 100%;
+    padding: 30px;
+}
+.searchSec{
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    background-color: rgb(243, 241, 241);
+    align-items: left;
+    flex-direction: column;
+    width: 21vw;
+    padding: 20px;
+    height: 100%;
+   
+}
+.listingSec{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: center;
+    position: relative;
+    width: 79vw;
+    
+    
+}
+.filterSearch{
+    display: flex;
+    justify-content: center;
+    align-items: left;
+   
+    padding: 10px;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+.filter{
+    background-color: transparent;
+}
+.searchbar{
+   
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   
+   
+ 
+    
+   
+}
+#titleSearch{
+    width:90%;
+    border: none;
+    outline: none;
+    height: 30px;
+    margin-left: 9px;
+    
+}
+#titleSearch::placeholder{
+    font-size: 1.2em;
+}
+#searchdiv{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 320px;
+    height: 30px;
+    border: 1px solid black;
+    border-radius: 7px;
+    padding-left: 10px;
+    padding-right: 10px;
+    outline: black;
+    
+
+}
+#searchdiv:focus{
+    border: 2px solid black;
+}
+
+
+#jobListingsContainer{
+   
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    flex-direction: column;
+    padding: 10px;
+}
+.job-listing{
+    padding: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #f3f3f3;
+    border-radius: 10px;
+    min-height: 180px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+   
+
+}
+#loader-container {
+    /* Set position absolute */
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader {
+    display: none;
+    border: 8px solid #f3f3f3; /* Light grey */
+    border-top: 8px solid #3498db; /* Blue */
+    border-radius: 50%;
+    
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+#searchQuery{
+    
+    width: 100%;
+    height: 60px;
+    font-size: 1.6em;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    font-weight: 600;
+}
+.pcon{
+    padding-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 1em;
+    color: #1f2021;
+    
+    
+}
+.con{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-direction: row;
+}
+#agency{
+    width: 32px;
+   
+    
+}
+#post{
+    width: 32px;
+}
+#location{
+    width: 32px;
+}
+#deadline{
+    width: 95px;
+}
+#apply{
+    color: #ffffff;
+    margin-left: auto;
+    text-decoration: none;
+    width: 120px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: #15bd15;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    font-weight: 600;
+}
+#apply:hover{
+    background-color: #1f2021;
+}
+
+.title:hover{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #15bd15;
+}
+.job-description{
+    padding:0;
+    font-size: 1.3em;
+}
+.additional-description{
+    padding-top: 0;
+    font-size: 1.3em;
+}
+.read-more-btn{
+    border: none;
+    font-size: 1em;
+    color: #3498db;
+}
+/* Customize the label (the container) */
+.labelbox {
+    
+
+    cursor: pointer;
+    font-size: 20px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Hide the browser's default checkbox */
+  .labelbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+    
+    
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .labelbox:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .labelbox input:checked ~ .checkmark {
+    background-color: #15bd15;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+   
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .labelbox input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .labelbox .checkmark:after {
+   
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+.filtertitle{
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: 1.7em;
+    font-family: Arial, Helvetica, sans-serif
+}
+.co{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+  span{
+    align-self: self-end;
+    padding-right: 20px;
+    align-self: flex-end;
+    
+    
+  }
+  .sticky{
+    padding: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000; 
+    background-color: #ffffff;
+  }
+
+
+  @media screen and (max-width: 1100px){
+    .filtertitle{
+        font-size: 1.2em;
+    }
+    .labelbox{
+        font-size: 1em;
+    }
+    .checkmark{
+        width: 12px;
+        height: 12px;
+    }
+    .pcon{
+        font-size: 0.8em;
+        font-weight: 600;
+    }
+    #agency{
+        width: 26px;
+    }
+    #location{
+        width: 27px;
+    }
+    #deadline{
+        width: 80px;
+    }
+    #applyimg{
+        width: 80px;
+
+    }
+    #searchdiv{
+        width: 280px;
+        height: 27px;
+    }
+    #titlesearch{
+        width: 200;
+        height: 26px;
+    }
+}
+@media screen and (max-width: 880px){
+    .title{
+        font-size: 1.1em;
+    }
+    .filtertitle{
+        font-size: 0.9em;
+    }
+    .labelbox{
+        font-size: 0.8em;
+    }
+    .checkmark{
+        width: 10px;
+        height: 10px;
+    }
+    .pcon{
+        font-size: 0.7em;
+        font-weight: 600;
+    }
+    #agency{
+        width: 23px;
+    }
+    #location{
+        width: 24px;
+    }
+    #deadline{
+        width: 70px;
+    }
+    #applyimg{
+        width: 60px;
+
+    }
+    #searchdiv{
+        width: 280px;
+        height: 27px;
+    }
+    #titlesearch{
+        width: 200;
+        height: 26px;
+    }
+    #locationSearch{
+        width: auto;
+    }
+    .job-listing{
+        padding: 10px;
+    }
+        
+}
+@media screen and (max-width: 805px){
+    .title{
+        font-size: 1.1em;
+    }
+    .filtertitle{
+        font-size: 0.9em;
+    }
+    .labelbox{
+        font-size: 0.8em;
+    }
+    .checkmark{
+        width: 10px;
+        height: 10px;
+    }
+    .pcon{
+        font-size: 0.7em;
+        font-weight: 600;
+        width: auto;
+        
+        justify-content: center;
+
+        
+    }
+    #agency{
+        width: 18px;
+    }
+    #location{
+        width: 19px;
+    }
+    #deadline{
+        width: 50px;
+    }
+    #applyimg{
+        width: 50px;
+
+    }
+    #apply{
+        align-self: flex-end;
+    }
+    #searchdiv{
+        width: 250px;
+        height: 20px;
+        border-radius: 5px;
+    }
+    #titlesearch{
+        width: 170;
+        height: 18px;
+    }
+    #locationSearch{
+        width: 120px;
+    }
+    #locationSearch::placeholder{
+        font-size: 0.8em;
+    }
+    .job-listing{
+        padding: 10px;
+        align-items: first baseline;
+        justify-content: left;
+    }
+    .con{
+        flex-direction: column;
+        align-items: first baseline;
+        justify-content: center;
+        width: 80%;
+        
+    }
+    object{
+        width: 14px;
+        height: 14px;
+    }
+    span{
+        font-size: 15px;
+    }    
+    .sticky{
+        padding: 10px;
+    }
+    #searchQuery{
+        font-size: 0.9em;
+        font-weight: 600;
+    }
+}
+@media screen and (max-width: 805px){
+    .title{
+        font-size: 1.1em;
+        padding-left: 30px;
+    }
+    .filtertitle{
+        font-size: 0.9em;
+    }
+    .labelbox{
+        font-size: 0.8em;
+    }
+    .checkmark{
+        width: 10px;
+        height: 10px;
+    }
+    .pcon{
+        font-size: 0.9em;
+        font-weight: 600;
+        
+        
+        
+        
+       
+        
+    }
+    #post{
+        width: 40px;
+        display: none;
+    }
+    #agency{
+        width: 30px;
+        display: none;
+    }
+    #location{
+        width: 30px;
+        display: none;
+    }
+    #deadline{
+        width: 70px;
+        display: none;
+    }
+    
+    #applyimg{
+        width: 90px;
+
+    }
+    #apply{
+        margin-right: 80px;
+    }
+    #searchdiv{
+        width: 250px;
+        height: 20px;
+        border-radius: 5px;
+    }
+    #titlesearch{
+        width: 170;
+        height: 18px;
+    }
+    #locationSearch{
+        width: 120px;
+    }
+    #locationSearch::placeholder{
+        font-size: 0.8em;
+    }
+    .job-listing{
+        
+       padding: 20px;
+        justify-content: left;
+        align-items: flex-start;
+       
+    }
+    .con{
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;padding: 0%;
+       
+
+        
+    }
+   
+    object{
+        width: 14px;
+        height: 14px;
+    }
+    span{
+        font-size: 15px;
+    }    
+    .sticky{
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        
+    }
+    #searchQuery{
+        font-size: 0.7em;
+        font-weight: 500;
+    }
+    .listingSec{
+        width: 100%;
+    }
+    .searchSec{
+        position: static;
+        width: 100vw;
+        overflow: hidden;
+        padding: 0;
+        display: none;
+    }
+    .sec1{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    #jobListingContainer{
+        padding:20px;
+        
+    }
+    .searchbar{
+        position: static;
+    }
+    #space{
+        display: none;
+    }
+}

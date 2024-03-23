@@ -1,0 +1,133 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h1, h2 {
+    text-align: center;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 3em;
+    font-weight: 800;
+}
+h3 {
+    text-align: center;
+    color: #141414;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2em;
+    font-weight: 800;
+}
+p {
+    margin-bottom: 10px;
+    line-height: 1;
+    font-size: 1.5em;
+    font-weight: 500;
+}
+.para{
+
+    padding-right: 20px;
+    padding-left: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.3em;
+
+}
+.hero-banner {
+    background-image: url('hero-banner1.jpg');
+   
+    
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+   
+}
+.hero-banner ::before{
+    filter: contrast(100%);
+    filter: brightness(30%);
+}
+.hero-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    color: #fff;
+    padding: 50px;
+    z-index: 1;
+}
+#buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+.link-button {
+    
+    padding: 10px 20px;
+    background-color: #2ace5e;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.link-button:hover {
+    background-color: #131415;
+}
+.recent-jobs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.job-listings {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.job-listing {
+    border-bottom: 1px solid #fff0f0;
+    padding: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+}
+.job-title {
+    font-size: 18px;
+    color: #007bff;
+}
+.job-description {
+    color: #666;
+}
+.job-location {
+    color: #333;
+}
+.job-deadline {
+    font-style: italic;
+    color: #999;
+}
+@media screen and (max-width: 388px){
+    h1,h2{
+        font-size:1.9em;
+    }
+}
